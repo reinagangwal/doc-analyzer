@@ -7,6 +7,7 @@ import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
 
 nltk.download('punkt')
+nltk.download('punkt_tab')
 
 st.title("📄 Document Analyzer")
 
@@ -48,7 +49,7 @@ if uploaded_file is not None:
             # Analysis
             words = word_tokenize(raw_text)
             sentences = sent_tokenize(raw_text)
-            paragraphs = raw_text.split("\n\n")
+            paragraphs = raw_text.split("\n")
 
             st.write(f"**Word Count:** {len(words)}")
             st.write(f"**Sentence Count:** {len(sentences)}")
